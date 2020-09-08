@@ -22,11 +22,11 @@ namespace Discord_Bot
 
         public async Task RunAsync()
         {
-            var json = string.Empty;
+            string json = string.Empty;
 
-            using (FileStream filestream = File.OpenRead("C:\\Users\\Carlsson\\source\\repos\\Discord Bot\\Discord Bot\\config.json"))
+            using (FileStream fileStream = File.OpenRead(""))
             {
-                using (StreamReader streamReader = new StreamReader(filestream, new UTF8Encoding(false)))
+                using (StreamReader streamReader = new StreamReader(fileStream, new UTF8Encoding(false)))
                 {
                     json = await streamReader.ReadToEndAsync().ConfigureAwait(false);
                 }
@@ -61,7 +61,7 @@ namespace Discord_Bot
 
             Commands = DiscordClient.UseCommandsNext(commandsConfiguration);
 
-            Commands.RegisterCommands<FunCommands>();
+            Commands.RegisterCommands<Commands.TestCommands>();
 
             await DiscordClient.ConnectAsync();
 
