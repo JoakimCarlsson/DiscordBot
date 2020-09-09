@@ -46,10 +46,7 @@ namespace Discord_Bot
             DiscordClient = new DiscordClient(configuration);
             DiscordClient.Ready += OnClientReady;
 
-            DiscordClient.UseInteractivity(new InteractivityConfiguration
-            {
-                Timeout = TimeSpan.FromMinutes(5),
-            });
+            DiscordClient.UseInteractivity(new InteractivityConfiguration());
 
             CommandsNextConfiguration commandsConfiguration = new CommandsNextConfiguration
             {
@@ -61,7 +58,8 @@ namespace Discord_Bot
 
             Commands = DiscordClient.UseCommandsNext(commandsConfiguration);
 
-            Commands.RegisterCommands<Commands.TestCommands>();
+            Commands.RegisterCommands<TestCommands>();
+            Commands.RegisterCommands<Weather>();
 
             await DiscordClient.ConnectAsync();
 
