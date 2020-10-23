@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Runtime.InteropServices;
+﻿using System.IO;
 using System.Text;
 using System.Threading.Tasks;
-using Discord_Bot.Commands;
+using DiscordBot.Commands;
 using DSharpPlus;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.EventArgs;
@@ -12,7 +9,7 @@ using DSharpPlus.Interactivity;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace Discord_Bot
+namespace DiscordBot
 {
     internal class Bot
     {
@@ -59,7 +56,8 @@ namespace Discord_Bot
             Commands = DiscordClient.UseCommandsNext(commandsConfiguration);
 
             Commands.RegisterCommands<TestCommands>();
-            Commands.RegisterCommands<Weather>();
+            Commands.RegisterCommands<WeatherCommand>();
+            Commands.RegisterCommands<NextLessonCommand>();
 
             await DiscordClient.ConnectAsync();
 

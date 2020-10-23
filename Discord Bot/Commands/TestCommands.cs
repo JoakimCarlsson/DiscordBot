@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
 using DSharpPlus.Interactivity;
 
-namespace Discord_Bot.Commands
+namespace DiscordBot.Commands
 {
     internal class TestCommands : BaseCommandModule
     {

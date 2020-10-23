@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Discord_Bot
+namespace DiscordBot
 {
     //https://json2csharp.com/
     public class WeatherHelper

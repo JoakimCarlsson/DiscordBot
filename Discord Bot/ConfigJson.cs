@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Discord_Bot
+namespace DiscordBot
 {
     internal struct ConfigJson
     {

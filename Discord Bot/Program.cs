@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Discord_Bot
+﻿namespace DiscordBot
 {
     class Program
     {

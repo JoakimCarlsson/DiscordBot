@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Net;
-using System.Text;
 using System.Threading.Tasks;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
 using Newtonsoft.Json;
 
-namespace Discord_Bot.Commands
+namespace DiscordBot.Commands
 {
-    class Weather : BaseCommandModule
+    class WeatherCommand : BaseCommandModule
     {
         [Command("Väder")]
         internal async Task GetWeatherData(CommandContext commandContext, string city)
@@ -24,7 +21,7 @@ namespace Discord_Bot.Commands
         {
             try
             {
-                string apiKey = "";
+                string apiKey = "ec0d1a9998b7d02596189ce825c86cdb";
                 HttpWebRequest apiRequest = WebRequest.Create($"http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=metric") as HttpWebRequest;
 
                 string apiResponse = "";
@@ -37,7 +34,7 @@ namespace Discord_Bot.Commands
                 WeatherHelper.WeatherData weather = JsonConvert.DeserializeObject<WeatherHelper.WeatherData>(apiResponse);
                 return weather;
             }
-            catch (WebException ex)
+            catch
             {
                 return null;
             }
